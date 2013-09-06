@@ -15,8 +15,8 @@
 		}, false);
 
 		gest.options.messages = false;
-		gest.options.locking = 100;
-		gest.start();
+		gest.options.locking = 0;
+		//gest.start();
 	};
 
 	bespoke.plugins.gest = function() {
