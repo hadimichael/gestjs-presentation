@@ -14,54 +14,84 @@ html
 
     article
 
-      section
+      section(data-bespoke-state='slide')
         h1 gest.js and the Leap Motion
+        hr
+        h2 
+          em @hadi_michael
 
-      section
-        h2 Bullet List
-        h3.bullet Powered by <a href="https://github.com/markdalgleish/bespoke-bullets">bespoke-bullets</a>
+      section(data-bespoke-state='slide', data-bespoke-hash='description')
+        h1 gest.js
+        h3 gest.js is a webcam based gesture recognition library that helps developers make webpages more immersive
+
+      section(data-bespoke-state='slide', data-bespoke-hash='demo')
+        h1 DEMO
+
+      section(data-bespoke-state='slide')
+        h2 Basic algorithm
+        h3.bullet
         ul
-          li Bullet 1
-          li Bullet 2
-          li Bullet 3
+          li Capture frames at 25fps (5x compressed).
+          li Use a difference map to determine pixels that have moved since the last frame.
+          li Count the pixels. If enough have moved, then find their average location and track the gesture.
+          li Evaluate the general direction of pixel movement.
 
-      section
-        h2 Syntax Highlighting
-        h3.bullet Powered by <a href="http://twitter.com/LeaVerou">Lea Verou</a>'s <a href="https://github.com/LeaVerou/prism">Prism</a>
+      section(data-bespoke-state='slide', data-bespoke-hash='usage')
+        h1 USAGE
+            
+      section(data-bespoke-state='slide')
+        h2 Starting and Stopping
         hr
         code.language-javascript
           pre.
-            bespoke.horizontal.from('article', {
-              bullets: 'li, .bullet',
-              hash: true,
-              state: true
-            });
-
-      section(data-bespoke-hash='named-route')
-        h2 Named Route
-        h3.bullet Powered by <a href="https://github.com/markdalgleish/bespoke-hash">bespoke-hash</a>
-        p Look up! This route has been named with a <em>'data-bespoke-hash'</em> attribute.
-
-      section(data-bespoke-state='emphatic')
-        h2 Emphatic Slide!
-        h3.bullet Powered by <a href="https://github.com/markdalgleish/bespoke-state">bespoke-state</a>
-
-      section
-        h2.bullet Just the beginning...
+            gest.start(); //start listening for gestures
         hr
-        ul
-          li Edit <a href="http://jade-lang.com/">Jade</a> markup in <em>'src/index.jade'</em>
-          li Edit <a href="http://learnboost.github.io/stylus/">Stylus</a> styles in <em>'src/styles/main.styl'</em>
-          li Edit JavaScript in <em>'src/scripts/main.js'</em>
+        code.language-javascript
+          pre.
+            gest.stop(); //stop listening for gestures
+
+      section(data-bespoke-state='slide')
+        h2 Handle Events
+        h3.bullet You will need to register an event listener on the <strong>document</strong> for <strong>gest</strong> using:
         hr
-        ul
-          li
-            strong Enjoy! :)
-            a(href='http://twitter.com/markdalgleish')  -@markdalgleish
+        code.language-javascript
+          pre.
+            document.addEventListener('gest', function(gesture) {
+              //handle gesture  
+            }, false);   
+
+      section(data-bespoke-state='slide')
+        h2 Event Object
+        h3.bullet
+        ul(style='text-align: left')
+          li <strong>.direction</strong> the recognised gesture in words as a string
+          li <strong>.up</strong> boolean, true if the recognised gesture is up
+          li <strong>.down</strong> boolean, true if the recognised gesture is down
+          li <strong>.left</strong> boolean, true if the recognised gesture is left
+          li <strong>.right</strong> boolean, true if the recognised gesture is right
+          li <strong>.error</strong> an error object with...
+          li &nbsp;&nbsp;&nbsp;&nbsp;<strong>.code</strong> a code as an int
+          li &nbsp;&nbsp;&nbsp;&nbsp;<strong>.message</strong> and a message as a string
+
+      section(data-bespoke-state='slide')
+        h2 Options
+        h3.bullet You can also set options using:
+        hr
+        code.language-javascript
+          pre.
+            gest.options.skinFilter = true; //set HSV skin filtering
+
+            gest.options.messages = false; //set on screen messages
+
+            gest.options.debug(true); //set debug mode
+
+      section(data-bespoke-state='slide')
+        h2 gest.js on github at <a href="http://hadimichael.github.io/gest.js/" target="_blank">hadimichael.github.io/gest.js/</a>
 
     script(src='bower_components/bespoke.js/dist/bespoke.min.js')
     script(src='bower_components/bespoke-bullets/dist/bespoke-bullets.min.js')
     script(src='bower_components/bespoke-hash/dist/bespoke-hash.min.js')
     script(src='bower_components/bespoke-state/dist/bespoke-state.min.js')
     script(src='bower_components/prism/prism.js')
+    script(src='scripts/bespoke-gest.js')
     script(src='scripts/main.js')
