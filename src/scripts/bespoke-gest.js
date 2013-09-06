@@ -1,17 +1,25 @@
 (function (bespoke){
-	gest.options.messages = false;
 	
-	bespoke.plugins.gestjs = function() {
-		//gest.start();
-		console.log("Asdf");
-	}
+	var head = document.getElementsByTagName('head')[0];
+	var script = document.createElement('script');
+	script.type = 'text/javascript';
+	script.src = 'scripts/gest.min.js';
 
-	document.addEventListener('gest', function(gesture) {
-		if (gesture.left) {
-			bespoke.next();
-		} else if (gesture.right) {
-			bespoke.prev();
-		}
-	}, false);
+	script.onload = function() { 
+		document.addEventListener('gest', function(gesture) {
+			if (gesture.left) {
+				bespoke.next();
+			} else if (gesture.right) {
+				bespoke.prev();
+			}
+		}, false);
+
+		gest.options.messages = false;
+		gest.start();
+	};
+
+	bespoke.plugins.gest = function() {
+		head.appendChild(script);
+	}
 
 }(bespoke));
