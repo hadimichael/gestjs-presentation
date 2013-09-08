@@ -3,7 +3,7 @@ html
   head
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
-    title gest.js and the Leap Motion
+    title gest.js
 
     //- Check out 'src/bower_components/prism/' for available themes
     link(rel='stylesheet', type='text/css', href='bower_components/prism/prism-tomorrow.css')
@@ -15,24 +15,23 @@ html
     article
 
       section(data-bespoke-state='slide')
-        h1 gest.js and the Leap Motion
+        h1 gest.js
         hr
         h2 
           em @hadi_michael
-        a(href="javascript:gest.start();") Let's go!  
-
-      section(data-bespoke-state='slide', data-bespoke-hash='description')
-        h1 gest.js
-        h3 gest.js is a webcam based gesture recognition library that helps developers make webpages more immersive
 
       section(data-bespoke-state='slide', data-bespoke-hash='demo')
         h1 DEMO
         hr
-        a(href="javascript:gest.stop();") Okay, I've had enough.
-        a(href="javascript:gest.start();") Let's go again!
+        a(href="javascript:gest.start();") Let's go! 
+        a(href="javascript:gest.stop();") Okay, stop gest
 
+      section(data-bespoke-state='slide', data-bespoke-hash='description')
+        h1 gest.js
+        h3 gest.js is a webcam based gesture recognition library that helps developers make webpages more immersive
+ 
       section(data-bespoke-state='slide')
-        h2 Basic algorithm
+        h2 Algorithm overview
         h3.bullet
         ul
           li Capture frames at 25fps (5x compressed).
