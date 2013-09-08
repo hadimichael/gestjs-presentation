@@ -15,7 +15,7 @@
 		}, false);
 
 		gest.options.messages = false;
-		gest.options.locking = 0;
+		gest.options.locking = 200;
 		//gest.start();
 	};
 
