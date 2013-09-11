@@ -1,5 +1,5 @@
 {
-  "name": "gestjs-and-the-leap-motion-bespoke",
+  "name": "gestjs-presentation-bespoke",
   "version": "0.0.0",
   "dependencies": {
     "bespoke.js": "~0.3.0",
