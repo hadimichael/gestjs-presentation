@@ -1,5 +1,4 @@
-# gest.js and the Leap Motion
-> A [Bespoke.js](http://markdalgleish.com/projects/bespoke.js) presentation, built with [generator-bespoke](https://github.com/markdalgleish/generator-bespoke)
+# gest.js presentation
 
 ## View slides locally
 
@@ -15,3 +14,6 @@ Then, install dependencies and run the preview server:
 $ npm install && bower install
 $ grunt server
 ```
+
+> This is a [Bespoke.js](http://markdalgleish.com/projects/bespoke.js) presentation, built with [generator-bespoke](https://github.com/markdalgleish/generator-bespoke)
+
