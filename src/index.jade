@@ -15,21 +15,23 @@ html
     article
 
       section(data-bespoke-state='slide')
-        h1 gest.js
+        h2 gest.js by 
+          a(href="http://twitter.com/hadi_michael")
+            em @hadi_michael
         hr
-        h2 
-          em @hadi_michael
-
-      section(data-bespoke-state='slide', data-bespoke-hash='demo')
-        h1 DEMO
-        hr
-        a(href="javascript:gest.start();") Let's go! 
-        a(href="javascript:gest.stop();") Okay, stop gest
+        p Use your arrow keys to navigate the slides
 
       section(data-bespoke-state='slide', data-bespoke-hash='description')
         h1 gest.js
-        h3 gest.js is a webcam based gesture recognition library that helps developers make webpages more immersive
+        h3 ... is a webcam based gesture recognition library that helps developers make webpages more immersive.
  
+      section(data-bespoke-state='slide', data-bespoke-hash='demo')
+        h1 DEMO
+        p You can use gest.js to navigate this slide deck...
+        hr
+        a(href="javascript:gest.start();gest.options.messages=true;") Let's go!
+        a(href="javascript:gest.stop();") Okay, stop gest.
+
       section(data-bespoke-state='slide')
         h2 Algorithm overview
         h3.bullet
@@ -91,7 +93,7 @@ html
             gest.options.debug(true); //set debug mode
 
       section(data-bespoke-state='slide')
-        h2 gest.js on github at <a href="http://hadimichael.github.io/gest.js/" target="_blank">hadimichael.github.io/gest.js/</a>
+        h2 gest.js is on github at <a href="http://hadimichael.github.io/gest.js/" target="_blank">hadimichael.github.io/gest.js/</a>
 
     script(src='bower_components/bespoke.js/dist/bespoke.min.js')
     script(src='bower_components/bespoke-bullets/dist/bespoke-bullets.min.js')
